@@ -42,10 +42,13 @@ function toggleSidebar() {
 async function loadClassInfo(className) {
     try {
         const response = await axios.get(`https://www.dnd5eapi.co/api/classes/${className}`);
+        const response2 = await axios.get(`https://www.dnd5eapi.co/api/classes/${className}/levels`);
 
         const classData = response.data;
+        const classLvl = response2.data;
         
-        console.log(classData)
+        console.log(classLvl)
+        
 
         // Actualiza la sección principal con la información de la clase
         const classInfoContainer = document.querySelector(".class-info");
@@ -54,6 +57,7 @@ async function loadClassInfo(className) {
             <h2>Descripción:</h2>
             <p>Hit die: 1d${classData.hit_die}</p>
             <p>Skills: ${classData.proficiency_choices[0].desc}</p>
+            <p>${classLvl.data  }</p>
             <!-- Agrega más información de la API aquí según tus necesidades -->
         `;
     } catch (error) {
@@ -70,3 +74,4 @@ classLinks.forEach((link) => {
         loadClassInfo(className);
     });
 });
+    

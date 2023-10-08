@@ -50,6 +50,35 @@ async function loadClassInfo(className) {
         console.log(classLvl)
         
 
+        const levels = classLvl.map((level) => level.level);
+        const levelNames = classLvl.map((level) => level.name);
+
+        // Configura los datos para el gráfico
+        const chartData = {
+            labels: levelNames,
+            datasets: [{
+                label: `Niveles de ${className}`,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                data: levels,
+                }]
+            }
+        
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+        };
+
+        // Crea el gráfico en el elemento canvas
+        const ctx = document.getElementById('classLevelsChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: chartData,
+            options: chartOptions,
+        });
+        
+
         // Actualiza la sección principal con la información de la clase
         const classInfoContainer = document.querySelector(".class-info");
         classInfoContainer.innerHTML = `

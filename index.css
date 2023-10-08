@@ -1,3 +1,7 @@
+body{
+    background-color: #6b2b00;
+    background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+}
 /* Estilos para la barra lateral */
 .sidebar {
     height: 100%;
@@ -25,9 +29,10 @@
 .allcontent{
     display: grid;
 }
+
 /* Estilos para el contenido principal */
 .content {
-    /* ... tus estilos actuales ... */
+    color: #cccaca;
     transition: margin-left 0.3s, width 0.3s; /* Agrega una transición para el desplazamiento del contenido */
     position: relative;
     left: 250px; /* Alinea el contenido principal con la barra cuando está abierta */

@@ -53,6 +53,7 @@ async function loadClassInfo(className) {
             <h1>${classData.name}</h1>
             <h2>Descripción:</h2>
             <p>Hit die: 1d${classData.hit_die}</p>
+            <p>Skills: ${classData.proficiency_choices[0].desc}</p>
             <!-- Agrega más información de la API aquí según tus necesidades -->
         `;
     } catch (error) {

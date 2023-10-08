@@ -1,3 +1,4 @@
+/* Estilos para la barra lateral */
 .sidebar {
     height: 100%;
     width: 250px;
@@ -5,8 +6,8 @@
     top: 0;
     left: -250px;
     background-color: #333;
-    padding-top: 20px;
-    transition: left 0.3s;
+    padding-top: 50px;
+    transition: left 0.3s, width 0.3s;
 }
 
 .sidebar a {
@@ -21,22 +22,26 @@
 .sidebar a:hover {
     background-color: #555;
 }
-
+.allcontent{
+    display: grid;
+}
 /* Estilos para el contenido principal */
 .content {
-    margin-left: 0;
-    padding: 20px;
+    /* ... tus estilos actuales ... */
+    transition: margin-left 0.3s, width 0.3s; /* Agrega una transición para el desplazamiento del contenido */
+    position: relative;
+    left: 250px; /* Alinea el contenido principal con la barra cuando está abierta */
+    width: calc(100% - 250px); /* Reduzca el ancho del contenido principal cuando la barra esté abierta */
 }
 
-/* Estilos para el botón de hamburguesa */
+/* Botón para abrir/cerrar la barra lateral en pantallas pequeñas */
 .open-btn {
-
     font-size: 30px;
     cursor: pointer;
-    color: #0f0303;
-    position: fixed;
+    color: #0a0808;
+    position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 1; /* Asegura que el botón esté por encima de la barra lateral */
+    transition: left 0.3s;
+    z-index: 2; /* Asegura que el botón esté por encima de la barra lateral */
 }
-

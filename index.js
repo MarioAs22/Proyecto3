@@ -38,17 +38,21 @@ function toggleSidebar() {
     }
 }
 // Función para cargar la información de la API y mostrarla
+
 async function loadClassInfo(className) {
     try {
-        const response = await axios.get(`https://www.dnd5eapi.co/docs/#get-/api/classes/${className}`);
+        const response = await axios.get(`https://www.dnd5eapi.co/api/classes/${className}`);
+
         const classData = response.data;
+        
+        console.log(classData)
 
         // Actualiza la sección principal con la información de la clase
         const classInfoContainer = document.querySelector(".class-info");
         classInfoContainer.innerHTML = `
             <h1>${classData.name}</h1>
             <h2>Descripción:</h2>
-            <p>${classData.desc}</p>
+            <p>Hit die: 1d${classData.hit_die}</p>
             <!-- Agrega más información de la API aquí según tus necesidades -->
         `;
     } catch (error) {

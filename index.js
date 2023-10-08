@@ -11,7 +11,7 @@ function openSidebar() {
     }
 }
 
-// Agrega un evento para cerrar la barra lateral cuando se hace clic en la página principal
+// Se Agrega un evento para cerrar la barra lateral cuando se hace clic en la página principal
 var content = document.querySelector(".content");
 content.addEventListener("click", function() {
     var sidebar = document.getElementById("mySidebar");
@@ -37,7 +37,7 @@ function toggleSidebar() {
         openButton.style.left = "260px";
     }
 }
-// Función para cargar la información de la API y mostrarla
+// Se crea una función para cargar la información de la API y mostrarla
 
 async function loadClassInfo(className) {
     try {
@@ -47,7 +47,7 @@ async function loadClassInfo(className) {
         
         console.log(classData)
 
-        // Actualiza la sección principal con la información de la clase
+        // Actualizamos la sección principal con la información de la clase
         const classInfoContainer = document.querySelector(".class-info");
         classInfoContainer.innerHTML = `
             <h1>${classData.name}</h1>
@@ -61,7 +61,7 @@ async function loadClassInfo(className) {
     }
 }
 
-// Agrega eventos de clic a los enlaces de la barra lateral
+// Agregremos eventos de clic a los enlaces de la barra lateral
 const classLinks = document.querySelectorAll(".sidebar a");
 classLinks.forEach((link) => {
     link.addEventListener("click", function (event) {
